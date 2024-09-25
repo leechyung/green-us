@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/logo"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/rectangle"
+        android:hint="@string/email"
+        android:paddingLeft="9dp"
+        android:paddingTop="10dp"
+        android:paddingRight="9dp"
+        android:paddingBottom="10dp"
+        android:textSize="16sp"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <EditText
+        android:id="@+id/pw"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/rectangle"
+        android:hint="@string/pwd"
+        android:inputType="textPassword"
+        android:paddingLeft="9dp"
+        android:paddingTop="10dp"
+        android:paddingRight="9dp"
+        android:paddingBottom="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/id" />
+
+    <TextView
+        android:id="@+id/auto_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:paddingEnd="9dp"
+        android:paddingBottom="3dp"
+        android:text="@string/auto_login"
+        android:textAlignment="viewEnd"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/auto_login_btn"
+        app:layout_constraintTop_toTopOf="@+id/auto_login_btn" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/auto_login_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="9dp"
+        android:textOff=""
+        android:textOn=""
+        android:thumb="@drawable/switch_thumb"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/pw"
+        app:switchMinWidth="0dp"
+        app:thumbTextPadding="24dp"
+        app:track="@drawable/switch_track" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_custom"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingLeft="9dp"
+        android:paddingTop="10dp"
+        android:paddingRight="9dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/auto_login" />
+
+    <Button
+        android:id="@+id/find_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_custom2"
+        android:text="@string/find_email"
+        android:textColor="@drawable/btn_text_color"
+        android:textSize="12sp"
+        android:paddingLeft="9dp"
+        android:paddingTop="10dp"
+        android:paddingRight="9dp"
+        android:paddingBottom="10dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/find_pw"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="@+id/find_pw" />
+
+    <Button
+        android:id="@+id/find_pw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_custom2"
+        android:text="@string/find_pw"
+        android:paddingLeft="9dp"
+        android:paddingTop="10dp"
+        android:paddingRight="9dp"
+        android:paddingBottom="10dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:textColor="@drawable/btn_text_color"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/join"
+        app:layout_constraintStart_toEndOf="@+id/find_email"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
+
+    <Button
+        android:id="@+id/join"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_custom2"
+        android:text="@string/join"
+        android:textColor="@drawable/btn_text_color"
+        android:textSize="12sp"
+        android:paddingLeft="9dp"
+        android:paddingTop="10dp"
+        android:paddingRight="9dp"
+        android:paddingBottom="10dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/find_pw"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/find_pw" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

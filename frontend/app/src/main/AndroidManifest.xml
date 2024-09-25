@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature android:name="android.hardware.SensorEventListener" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:name=".pedometer.MyApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Green_us"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".GreeningReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CertificationImgDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAllCertifiedImgActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CertifyGreeningActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SubActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FaqActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PointWithdrawActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FindPwActivity"
+            android:exported="false"
+            android:label="@string/title_activity_find_pw"
+            android:theme="@style/Theme.Green_us.NoActionBar" />
+        <activity
+            android:name=".FindEmailActivity"
+            android:exported="false"
+            android:label="@string/title_activity_find_email"
+            android:theme="@style/Theme.Green_us.NoActionBar" />
+        <activity
+            android:name=".FindEmailCompltActivity"
+            android:exported="false"
+            android:label="@string/title_activity_find_email"
+            android:theme="@style/Theme.Green_us.NoActionBar" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Green_us">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".JoinActivity"
+            android:exported="false"
+            android:label="@string/title_activity_join"
+            android:theme="@style/Theme.Green_us" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteCheckActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PointActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NoticeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GreeningDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GreeningDetailSubActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="dt86obehkg" />
+
+        <activity
+            android:name=".WithdrawsActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>그리닝 추가</title>
+
+    <link rel="stylesheet" href="/css/green-theme.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 120%;
+            max-width: 1920px;
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .navbar {
+            background: #003220;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .navbar .nav-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+        }
+        .navbar .nav-link:hover {
+            text-decoration: underline;
+        }
+        .content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .content h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        .btn {
+            background-color: #003220;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn-danger {
+            background-color: #f44336;
+        }
+        .btn-update {
+            background-color: #159805;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-brand"><a class="nav-link" href="/admins/home">관리 페이지</a></div>
+    <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/users/listPage">회원 관리</a></li>
+        <li class="nav-item"><a class="nav-link" href="/greening/listPage">그리닝 관리</a></li>
+        <li class="nav-item"><a class="nav-link" href="/notice/listPage">공지사항 관리</a></li>
+        <li class="nav-item"><a class="nav-link" href="/certify/listPage">인증 관리</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="content">
+        <h2>그리닝 추가</h2>
+        <form id="greeningForm" th:action="@{/greening/save}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <div class="form-group">
+                <label for="gName">이름</label>
+                <input type="text" id="gName" name="gName" required/>
+            </div>
+            <div class="form-group">
+                <label for="gStartDate">시작 날짜</label>
+                <input type="date" id="gStartDate" name="gStartDate" required/>
+            </div>
+            <div class="form-group">
+                <label for="gEndDate">종료 날짜</label>
+                <input type="date" id="gEndDate" name="gEndDate" required/>
+            </div>
+            <div class="form-group">
+                <label for="gKind">구분 (1: 활동형 / 2: 구매형)</label>
+                <select id="gKind" name="gKind" required>
+                    <option value="1">활동형</option>
+                    <option value="2">구매형</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="gCertiWay">인증 방법</label>
+                <select id="gCertiWay" name="gCertiWay" required>
+                    <option value="활동 사진">활동 사진</option>
+                    <option value="영수증">영수증</option>
+                    <option value="활동내역 인증서">활동내역 인증서</option>
+                    <option value="그리닝 물품">그리닝 물품</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="gInfo">정보</label>
+                <textarea id="gInfo" name="gInfo"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="gMemberNum">참가자 수</label>
+                <input type="number" id="gMemberNum" name="gMemberNum" value= "0"/>
+            </div>
+            <div class="form-group">
+                <label for="gFreq">빈도</label>
+                <input type="number" id="gFreq" name="gFreq" value= "0"/>
+            </div>
+            <div class="form-group">
+                <label for="gDeposit">예치금</label>
+                <input type="number" id="gDeposit" name="gDeposit"/>
+            </div>
+            <div class="form-group">
+                <label for="gTotalCount">총 예치금</label>
+                <input type="number" id="gTotalCount" name="gTotalCount" value= "0"/>
+            </div>
+            <div class="form-group">
+                <label for="gNumber">총 인증 횟수</label>
+                <input type="number" id="gNumber" name="gNumber" value= "0"/>
+            </div>
+            <div class="form-group">
+                <label for="gImage">이미지</label>
+                <input type="file" id="gImage" name="gImage" accept="image/*"/>
+            </div>
+            <div class="form-group">
+                <label for="gContentImage">내용 이미지</label>
+                <input type="file" id="gContentImage" name="gContentImage" accept="image/*"/>
+            </div>
+            <button type="submit" class="btn btn-update">저장</button>
+            <a href="/greening/listPage" class="btn btn-danger">취소</a>
+        </form>
+    </div>
+</div>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+    import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyA4fySAoPu0_DmDckdd8exXP1bqzadbVAA",
+        authDomain: "greenus-e1888.firebaseapp.com",
+        projectId: "greenus-e1888",
+        storageBucket: "greenus-e1888.appspot.com",
+        messagingSenderId: "369481686994",
+        appId: "1:369481686994:web:06b009375a8ee83ea1b20b",
+        measurementId: "G-40CK5WREC9"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+    const storage = getStorage(app);
+
+    document.getElementById('greeningForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const formData = new FormData(form);
+
+        fetch('/greening/save-initial', {
+            method: 'POST',
+            body: formData,
+        })
+            .then(response => response.json())
+            .then(data => {
+                const gSeq = data.gSeq;
+
+                const gImage = document.getElementById('gImage').files[0];
+                const gContentImage = document.getElementById('gContentImage').files[0];
+
+                if (gImage) {
+                    const gImageName = `${gSeq}`;
+                    const storageRef = ref(storage, `officialGreeningImgs/${gImageName}`);
+                    const uploadTask = uploadBytes(storageRef, gImage);
+
+                    uploadTask.then((snapshot) => {
+                        return getDownloadURL(storageRef);
+                    }).then((downloadURL) => {
+                        formData.append('gImageURL', downloadURL);
+
+                        if (gContentImage) {
+                            const contentStorageRef = ref(storage, `officialGreeningImgs/content/${gImageName}`);
+                            return uploadBytes(contentStorageRef, gContentImage).then(() => {
+                                return getDownloadURL(contentStorageRef);
+                            }).then((contentDownloadURL) => {
+                                formData.append('gContentImageURL', contentDownloadURL);
+                                return submitFinalForm(formData, gSeq);
+                            });
+                        } else {
+                            return submitFinalForm(formData, gSeq);
+                        }
+                    })
+                }
+            })
+
+    });
+
+    function submitFinalForm(formData, gSeq) {
+        formData.append('gSeq', gSeq);
+
+        return fetch('/greening/save-final', {
+            method: 'POST',
+            body: formData,
+        }).then(response => {
+            if (response.ok) {
+                window.location.href = '/greening/listPage';
+            }
+        })
+    }
+</script>
+</body>
+</html>

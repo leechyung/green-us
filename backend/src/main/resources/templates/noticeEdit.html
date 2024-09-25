@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항 수정</title>
+    <link rel="stylesheet" href="/css/green-theme.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .navbar {
+            background: #003220;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .content h1 {
+            margin-top: 0;
+            font-size: 2em;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn-primary {
+            background-color: #4CAF50;
+        }
+        .btn-cancel {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-brand"><a class="nav-link" href="/admins/home">관리 페이지</a></div>
+    <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/users/listPage">회원 관리</a></li>
+        <li class="nav-item"><a class="nav-link" href="/greening/list">그리닝 관리</a></li>
+        <li class="nav-item"><a class="nav-link" href="/notice/listPage">공지사항 관리</a></li>
+        <li class="nav-item"><a class="nav-link" href="/certify/listPage">인증 관리</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="content">
+        <h1>공지사항 수정</h1>
+        <div class="form-container">
+            <form id="updateForm">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                <input type="hidden" id="noticeSeq" name="noticeSeq" th:value="${notice.noticeSeq}" />
+                <div class="form-group">
+                    <label for="title">제목</label>
+                    <input type="text" id="title" name="title" th:value="${notice.noticeTitle}" required />
+                </div>
+                <div class="form-group">
+                    <label for="content">내용</label>
+                    <textarea id="content" name="content" required th:text="${notice.noticeContent}"></textarea>
+                </div>
+                <button type="button" onclick="submitForm()" class="btn btn-primary">수정</button>
+                <a href="/notice/listPage" class="btn btn-cancel">취소</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function submitForm() {
+        const form = document.getElementById('updateForm');
+        const formData = new FormData(form);
+
+        // noticeSeq 값을 추출
+        const noticeSeq = formData.get('noticeSeq');
+        const title = formData.get('title');
+        const content = formData.get('content');
+        const csrfToken = formData.get('${_csrf.parameterName}'); // CSRF Token
+
+        // Fetch API를 사용하여 PUT 요청 전송
+        fetch(`/notice/update/${noticeSeq}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': csrfToken // CSRF Token 추가
+            },
+            body: JSON.stringify({
+                noticeTitle: title,
+                noticeContent: content
+            })
+        })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/notice/listPage';
+                } else {
+                    alert('수정에 실패했습니다.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('서버와의 통신 중 오류가 발생했습니다.');
+            });
+    }
+</script>
+</body>
+</html>

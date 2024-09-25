@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항 추가</title>
+    <link rel="stylesheet" href="/css/green-theme.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 60%; /* 폭을 60%로 설정하여 중앙 정렬 */
+            max-width: 1000px; /* 최대 폭 설정 */
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .navbar {
+            background: #003220;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .content {
+            background: #fff;
+            padding: 40px; /* 패딩을 늘려서 더 많은 공간 확보 */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .content h1 {
+            margin-top: 0;
+            font-size: 2em;
+        }
+        .form-group {
+            margin-bottom: 20px; /* 여백을 늘려서 더 많은 공간 확보 */
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px; /* 패딩을 늘려서 더 많은 공간 확보 */
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 24px; /* 패딩을 늘려서 더 많은 공간 확보 */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px; /* 폰트 크기 증가 */
+            margin: 8px 0;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-brand"><a class="nav-link" href="/admins/home">관리 페이지</a></div>
+</nav>
+
+<div class="container">
+    <div class="content">
+        <h1>공지사항 추가</h1>
+        <form th:action="@{/notice/new}" method="post">
+            <div class="form-group">
+                <label for="noticeTitle">제목:</label>
+                <input type="text" id="noticeTitle" name="noticeTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="noticeContent">내용:</label>
+                <textarea id="noticeContent" name="noticeContent" rows="6" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="noticeDate">날짜:</label>
+                <input type="date" id="noticeDate" name="noticeDate" required>
+            </div>
+            <button type="submit" class="btn">추가</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/icon_home"
+        android:icon="@drawable/bottom_navi_selector_home"
+        android:title="홈"
+
+        />
+    <item
+        android:id="@+id/icon_mygreen"
+        android:icon="@drawable/bottom_navi_selector_mygreen"
+        android:title="내그리닝"
+        />
+    <item
+        android:id="@+id/icon_mypage"
+        android:icon="@drawable/bottom_navi_selector_mypage"
+        android:title="마이페이지"
+        />
+</menu>

@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>그리닝 수정</title>
+    <link rel="stylesheet" href="/css/green-theme.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 120%;
+            max-width: 1920px;
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .navbar {
+            background: #003220;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .navbar .nav-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+        }
+        .navbar .nav-link:hover {
+            text-decoration: underline;
+        }
+        .content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .content h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        .btn {
+            background-color: #003220;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn-danger {
+            background-color: #f44336;
+        }
+        .btn-update {
+            background-color: #159805;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-brand"><a class="nav-link" href="/admins/home">관리 페이지</a></div>
+    <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/users/listPage">회원 관리</a></li>
+        <li class="nav-item"><a class="nav-link" href="/greening/listPage">그리닝 관리</a></li>
+        <li class="nav-item"><a class="nav-link" href="/notice/listPage">공지사항 관리</a></li>
+        <li class="nav-item"><a class="nav-link" href="/certify/listPage">인증 관리</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="content">
+        <h2>그리닝 수정</h2>
+        <form th:action="@{/greening/update}" method="post">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <div class="form-group">
+                <label for="gName">이름</label>
+                <input type="text" id="gName" name="gName" th:value="${greening.gName}" required/>
+            </div>
+            <div class="form-group">
+                <label for="gStartDate">시작 날짜</label>
+                <input type="date" id="gStartDate" name="gStartDate" th:value="${greening.gStartDate}" required/>
+            </div>
+            <div class="form-group">
+                <label for="gEndDate">종료 날짜</label>
+                <input type="date" id="gEndDate" name="gEndDate" th:value="${greening.gEndDate}" required/>
+            </div>
+            <div class="form-group">
+                <label for="gCertiWay">인증 방법</label>
+                <input type="text" id="gCertiWay" name="gCertiWay" th:value="${greening.gCertiWay}" />
+            </div>
+            <div class="form-group">
+                <label for="gInfo">내용</label>
+                <input type="text" id="gInfo" name="gInfo" th:value="${greening.gInfo}" required/>
+            </div>
+            <div class="form-group">
+                <label for="gMemberNum">참가자 수</label>
+                <input type="number" id="gMemberNum" name="gMemberNum" th:value="${greening.gMemberNum}" />
+            </div>
+            <div class="form-group">
+                <label for="gFreq">빈도</label>
+                <input type="number" id="gFreq" name="gFreq" th:value="${greening.gFreq}" />
+            </div>
+            <div class="form-group">
+                <label for="gDeposit">예치금</label>
+                <input type="number" id="gDeposit" name="gDeposit" th:value="${greening.gDeposit}" />
+            </div>
+            <div class="form-group">
+                <label for="gTotalCount">총 예치금</label>
+                <input type="number" id="gTotalCount" name="gTotalCount" th:value="${greening.gTotalCount}" />
+            </div>
+            <div class="form-group">
+                <label for="gNumber">총 인증 횟수</label>
+                <input type="number" id="gNumber" name="gNumber" th:value="${greening.gNumber}" />
+            </div>
+            <input type="hidden" name="gSeq" th:value="${greening.gSeq}" />
+            <button type="submit" class="btn btn-update">저장</button>
+            <a href="/greening/listPage" class="btn btn-danger">취소</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

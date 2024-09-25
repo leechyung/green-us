@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>인증 목록</title>
+    <link rel="stylesheet" href="/css/green-theme.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .navbar {
+            background: #003220;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .content h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .certify-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        .certify-table th, .certify-table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .certify-table th {
+            background-color: #003220;
+            color: white;
+        }
+        .certify-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .certify-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .btn {
+            background-color: #003220;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn-danger {
+            background-color: #f44336;
+        }
+        .btn-update {
+            background-color: #159805;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-brand"><a class="nav-link" href="/admins/home">관리 페이지</a></div>
+    <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/users/listPage">회원 관리</a></li>
+        <li class="nav-item"><a class="nav-link" href="/greening/listPage">그리닝 관리</a></li>
+        <li class="nav-item"><a class="nav-link" href="/notice/listPage">공지사항 관리</a></li>
+        <li class="nav-item"><a class="nav-link" href="/certify/list">인증 관리</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="content">
+        <h2>인증 목록</h2>
+        <table class="certify-table">
+            <thead>
+            <tr>
+                <th>인증 번호</th>
+                <th>인증 날짜</th>
+                <th>사용자 이름</th>
+                <th>그리닝 이름</th>
+                <th>삭제 / 수정</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="certify : ${certifies}">
+                <td th:text="${certify.certifySeq}" style="text-align: center"></td>
+                <td th:text="${certify.certifyDate}"></td>
+                <td th:text="${certify.user.userName}"></td>
+                <td th:text="${certify.greening.GName}"></td>
+                <td>
+                    <form th:action="@{/certify/delete/{certifySeq}(certifySeq=${certify.certifySeq})}" method="post" style="display:inline;">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        <button type="submit" class="btn btn-danger">삭제</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        그리닝 인증 사진은 firebase 서버에서 확인할 수 있습니다.
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/layout_join1"
+    tools:context=".Join2Fragment">
+
+    <ImageView
+        android:id="@+id/btn_esc"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/btn_prev_32"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.6"
+        android:layout_height="wrap_content"
+        android:minEms="11"
+        android:inputType="phone"
+        android:background="@drawable/rectangle"
+        app:layout_constraintTop_toBottomOf="@+id/btn_esc"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="86dp"
+        android:hint="@string/phone"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:paddingHorizontal="9dp"
+        android:paddingVertical="10dp"
+        />
+    <Button
+        android:id="@+id/btn_sent_code"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.3"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toEndOf="@+id/et_phone"
+        app:layout_constraintTop_toTopOf="@+id/et_phone"
+        app:layout_constraintBottom_toBottomOf="@+id/et_phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/button_custom"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:text="@string/check_phone" />
+
+    <EditText
+        android:id="@+id/et_code_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="9dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="@string/input_num"
+        android:textSize="16sp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="9dp"
+        android:textColor="@color/black"
+        android:inputType="text"
+        />
+    <TextView
+        android:id="@+id/tv_valid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="9dp"
+        app:layout_constraintStart_toStartOf="@+id/et_code_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_code_input"
+        android:visibility="gone"
+        android:textColor="#C81313"
+        android:textSize="14sp"
+        android:text="@string/num_validation" />
+
+
+    <Button
+        android:id="@+id/btn_phone_check"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_custom"
+        android:text="@string/check_num"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_valid"
+        android:layout_marginTop="60dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

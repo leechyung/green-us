@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "369481686994",
+    "project_id": "greenus-e1888",
+    "storage_bucket": "greenus-e1888.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369481686994:android:923b3a3023b94660a1b20b",
+        "android_client_info": {
+          "package_name": "kr.ac.kpu.green_us"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUBD8EohVTOz3224Hv4FMBqUb-3aZ5wxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

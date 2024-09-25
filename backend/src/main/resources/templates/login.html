@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<img src="/images/login-image.jpg" alt="Main Image" class="main-image">
+<body>
+<div class="login-container">
+    <h2>관리자 로그인</h2>
+    <form id="loginForm">
+        <input type="text" id="adminId" name="adminId" placeholder="Admin ID" required>
+        <input type="password" id="adminPwd" name="adminPwd" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <p id="message" class="message"></p>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const adminId = document.getElementById('adminId').value;
+        const adminPwd = document.getElementById('adminPwd').value;
+
+        fetch('/admins/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({
+                adminId: adminId,
+                adminPwd: adminPwd
+            })
+        })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/admins/home';
+                } else {
+                    response.text().then(text => {
+                        document.getElementById('message').textContent = text;
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
+</script>
+</body>
+</html>

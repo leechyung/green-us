@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js?autoload=false"></script>
+</head>
+<body>
+<script>
+    var element_layer = document.getElementById('layer');
+    daum.postcode.load(function(){
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // Android WebView로 데이터 전송
+                window.Android.processDATA(JSON.stringify(data));
+            }
+        }).embed();
+    });
+</script>
+</body>
+</html>
