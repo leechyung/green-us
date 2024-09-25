@@ -1,7 +1,7 @@
 <h2 align="center">GREEN-US, 친환경적 습관 형성을 위한 앱</h2>
 
 <p align="center">
-  <img src="https://github.com/green-us/backend/src/main/resources/static/images/login-image.jpg" alt="green-us main logo" width="400px" height="400px"/>
+  <img src="https://github.com/github.com/green-us-2024/green-us/backend/src/main/resources/static/images/login-image.jpg" alt="green-us main logo" width="400px" height="400px"/>
 </p>
 
 
