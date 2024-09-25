@@ -19,11 +19,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class JoinCompltFragment : Fragment() {
-    private var email = ""
-    private var pw = ""
-    private var phoneNumber = ""
-    private var address = ""
-    private var address_detail = ""
     private lateinit var callback: OnBackPressedCallback
     private var lastBackPressedTime = 0L
     private var name = ""
@@ -37,12 +32,7 @@ class JoinCompltFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentJoinCompltBinding.inflate(inflater, container, false)
         // 이전 프래그먼트로부터 온 bundle 데이터 받기
-//        email = arguments?.getString("email").toString()
-//        pw = arguments?.getString("pw").toString()
-//        phoneNumber = arguments?.getString("phone").toString()
         name = arguments?.getString("name").toString()
-//        address = arguments?.getString("address").toString()
-//        address_detail = arguments?.getString("address_detail").toString()
         return binding.root
     }
 

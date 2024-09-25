@@ -23,10 +23,7 @@ class AddressDialogFragment : DialogFragment() {
         val view = inflater.inflate(R.layout.fragment_address_search, container, false)
         webView = view.findViewById(R.id.webView)
         setupWebView()
-////        webView.loadUrl("http://192.168.219.105:8080/address") //여기 주소 변경 필요
-        webView.loadUrl("http://192.168.25.8:8080/address") //여기 주소 변경 필요
-////        webView.loadUrl("http://172.30.1.11:8080/address") //여기 주소 변경 필요
-//        webView.loadUrl("http://192.168.219.107:8080/address") //세진
+        webView.loadUrl("본인pc ip주소/address")
         return view
     }
 

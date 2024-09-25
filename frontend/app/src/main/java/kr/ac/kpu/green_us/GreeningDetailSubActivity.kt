@@ -168,43 +168,6 @@ class GreeningDetailSubActivity : AppCompatActivity() {
                                     Log.e("GreeningDetailSubActivity", "서버 통신 중 오류 발생", t)
                                 }
                             })
-
-                            /*
-                                                        //참여하기 버튼
-                                                        binding.button.setOnClickListener {
-                                                            getUserByEmail { user ->
-                                                                if (user != null) {
-                                                                    val participate = Participate(user = user, greening = greening)
-                                                                    val apiService =
-                                                                        RetrofitManager.retrofit.create(RetrofitAPI::class.java)
-                                                                    apiService.registerParticipate(participate)
-                                                                        .enqueue(object : Callback<Participate> {
-                                                                            override fun onResponse(
-                                                                                call: Call<Participate>,
-                                                                                response: Response<Participate>
-                                                                            ) {
-                                                                                if (response.isSuccessful) {
-                                                                                    Log.d("GreeningDetailSubActivity", "참여 등록 완료")
-                                                                                    Toast.makeText(application,"${greening.gName}에 참여 완료", Toast.LENGTH_SHORT).show()
-                                                                                    //메인 화면으로 이동
-                                                                                } else {
-                                                                                    Log.e("GreeningDetailSubActivity", "그리닝 참여 실패: ${response.code()}, ${response.errorBody()?.string()}")
-                                                                                }
-                                                                            }
-
-                                                                            override fun onFailure(
-                                                                                call: Call<Participate>,
-                                                                                t: Throwable
-                                                                            ) {
-                                                                                Log.e("GreeningDetailSubActivity", "서버 통신 중 오류 발생", t)
-                                                                                // 실패 처리 로직
-                                                                            }
-                                                                        })
-                                                                }
-                                                            }
-                                                        }
-
-                             */
                         }
                     } else {
                         Log.e("GreeningDetailSubActivity", "Greening 데이터 로딩 실패: ${response.code()}")

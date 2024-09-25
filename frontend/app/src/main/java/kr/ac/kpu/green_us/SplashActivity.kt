@@ -57,30 +57,6 @@ class SplashActivity : AppCompatActivity() {
             },2000)
         }
 
-
-//        if (user == null){ // 로그인한 적이 없다면 로그인 및 회원가입을 할 수 있는 ui를 반환
-//            Handler().postDelayed({
-//                val intent = Intent(this, LoginActivity::class.java)
-//                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-//                startActivity(intent)
-//                finish()
-//            },2000)
-//        }
-//        else{ // 로그인한 적이 있다면 자동로그인하며 메인화면 반환
-//            Handler().postDelayed({
-////                Log.d("uid",uid)
-//                val intent = Intent(this, MainActivity::class.java)
-//                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-//                startActivity(intent)
-//                finish()
-//            },2000)
-//        }
-//        Handler().postDelayed({
-//                val intent = Intent(this, LoginActivity::class.java)
-//                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-//                startActivity(intent)
-//                finish()
-//            },2000)
     }
 
 }

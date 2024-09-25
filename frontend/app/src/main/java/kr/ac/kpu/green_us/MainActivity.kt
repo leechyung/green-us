@@ -49,11 +49,6 @@ class MainActivity : AppCompatActivity() {
         android.Manifest.permission.CAMERA,
         android.Manifest.permission.READ_MEDIA_IMAGES,
         android.Manifest.permission.ACTIVITY_RECOGNITION)
-//    private val BackPressedCallback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
-//        override fun handleOnBackPressed() {
-//            return
-//        }
-//    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
