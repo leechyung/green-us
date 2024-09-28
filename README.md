@@ -16,19 +16,19 @@
 | **Database**  | ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)  ![Firebase](https://img.shields.io/badge/Firebase-DD2C00?style=for-the-badge&logo=Firebase&logoColor=white) |
 | **IDE**  | ![AndroidStudio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white)  ![Intellij](https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)|
 
-*MySQL 8.xx 버전 사용<br>
-*Android Studio Koala 사용
+* MySQL 8.xx 버전 사용<br>
+* Android Studio Koala 사용
 
 
 ## 개발 환경 세팅 :pencil:
 ❗ Frontend
-*RetrofitManager -> 본이 pc의 ip주소 및 포트 사용 필요 (로컬 환경에서 실행)
+* RetrofitManager -> 본이 pc의 ip주소 및 포트 사용 필요 (로컬 환경에서 실행)
  ```xml
 val retrofit = Retrofit.Builder()
             .baseUrl("본인 pc ip 주소")
 ```
 
-*AddressDialogFragment -> 본이 pc의 ip주소 및 포트 사용 필요 (로컬 환경에서 실행)
+* AddressDialogFragment -> 본이 pc의 ip주소 및 포트 사용 필요 (로컬 환경에서 실행)
  ```xml
 val view = inflater.inflate(R.layout.fragment_address_search, container, false)
         webView = view.findViewById(R.id.webView)
@@ -37,7 +37,7 @@ val view = inflater.inflate(R.layout.fragment_address_search, container, false)
 ```
 
 ❗ Backend
-*본인 DB 비밀번호 사용
+* 본인 DB 비밀번호 사용
  ```xml
 spring.datasource.password=????
 ```
