@@ -37,8 +37,8 @@ val view = inflater.inflate(R.layout.fragment_address_search, container, false)
 ```
 
 ❗ Backend
+*본인 DB 비밀번호 사용
  ```xml
 spring.datasource.password=????
 ```
-본인 DB 비밀번호 사용
 
