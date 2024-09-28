@@ -9,6 +9,11 @@
 
 ## 기술 스택 :pushpin:
 
+| Backend   | ----------- | |
+| Frontend   | ----------- | ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) |
+| Database   | ----------- | |
+
+
 | Backend   | Frontend          | Database   |
 |-----------|-------------------|------------|
 | ![Spring](https://img.shields.io/badge/Spring-6DB33F?logo=spring&logoColor=white) | ![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white) | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white) |
