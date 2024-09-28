@@ -11,9 +11,8 @@
 
 | Category  | Technology        |
 |-----------|-------------------|
-| Backend   | ![Spring](https://img.shields.io/badge/Spring-6DB33F?logo=spring&logoColor=white) |
-|           | ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&logoColor=white) |
-|           | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black) |
+| Backend   | ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)  ![SpringBoot](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white) |
+
 | Frontend  | ![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white) |
 |           | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) |
 |           | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white) |
