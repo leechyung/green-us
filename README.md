@@ -22,15 +22,18 @@
 
 ## 개발 환경 세팅 :pencil:
 ❗ Frontend
+*RetrofitManager -> 본이 pc의 ip주소 및 포트 사용 필요 (로컬 환경에서 실행)
  ```xml
 val retrofit = Retrofit.Builder()
             .baseUrl("본인 pc ip 주소")
 ```
+
+*AddressDialogFragment -> 본이 pc의 ip주소 및 포트 사용 필요 (로컬 환경에서 실행)
  ```xml
 val view = inflater.inflate(R.layout.fragment_address_search, container, false)
         webView = view.findViewById(R.id.webView)
         setupWebView()
-        webView.loadUrl("본인pc ip주소/address")
+        webView.loadUrl("본인 pc ip주소/address")
 ```
 
 ❗ Backend
@@ -39,5 +42,3 @@ spring.datasource.password=????
 ```
 본인 DB 비밀번호 사용
 
-addressDialogFragmetn
-retrofitmanager
