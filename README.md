@@ -42,3 +42,8 @@ val view = inflater.inflate(R.layout.fragment_address_search, container, false)
 spring.datasource.password=????
 ```
 
+## ERD 📎
+![ERD](https://github.com/user-attachments/assets/78dd3c0a-79e7-4625-b478-2067fb9ca431)
+
+
+
