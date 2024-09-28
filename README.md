@@ -16,8 +16,28 @@
 | **Database**  | ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)  ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white) |
 | **IDE**  | ![AndroidStudio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white)  ![Intellij](https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)|
 
+*MySQL 8.xx 버전 사용
+*Android Studio Koala 사용
 
 
+## 개발 환경 세팅 :pencil:
+❗ Frontend
+ ```xml
+val retrofit = Retrofit.Builder()
+            .baseUrl("본인 pc ip 주소")
+```
+ ```xml
+val view = inflater.inflate(R.layout.fragment_address_search, container, false)
+        webView = view.findViewById(R.id.webView)
+        setupWebView()
+        webView.loadUrl("본인pc ip주소/address")
+```
+
+❗ Backend
+ ```xml
+spring.datasource.password=????
+```
+본인 DB 비밀번호 사용
 
 addressDialogFragmetn
 retrofitmanager
