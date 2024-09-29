@@ -37,10 +37,11 @@ val view = inflater.inflate(R.layout.fragment_address_search, container, false)
 ```
 
 ❗ Backend
-* 본인 DB 비밀번호 사용
+* application.properties -> 본인 DB 비밀번호 사용
  ```xml
 spring.datasource.password=????
 ```
++ SQL을 직접 실행해도 되지만, 서버를 실행시키면 자동으로 생성 됌.
 
 ## 주요 기능 ✔️
 * 환경부 정책 정보 나눔
