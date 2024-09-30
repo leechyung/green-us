@@ -20,7 +20,7 @@
 * Android Studio Koala 사용
 
 
-## 개발 환경 세팅 :pencil:
+## 개발 환경 세팅 🪛 
 ❗ Frontend
 * RetrofitManager -> 본이 pc의 ip주소 및 포트 사용 필요 (로컬 환경에서 실행)
  ```xml
@@ -96,7 +96,7 @@ spring.datasource.password=????
 ![Vector-1](https://github.com/user-attachments/assets/95745a58-0864-478e-8dae-30dcf7fbe4fd)
 ![Vector](https://github.com/user-attachments/assets/237163a8-b841-4342-8e90-f06df53b7944)
 
-## ERD 📎
+## ERD 📝
 ![ERD](https://github.com/user-attachments/assets/78dd3c0a-79e7-4625-b478-2067fb9ca431)
 
 
