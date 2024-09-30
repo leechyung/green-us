@@ -20,7 +20,7 @@
 * Android Studio Koala 사용
 
 
-## 개발 환경 세팅 🪛 
+## 개발 환경 세팅 :screwdriver:
 ❗ Frontend
 * RetrofitManager -> 본이 pc의 ip주소 및 포트 사용 필요 (로컬 환경에서 실행)
  ```xml
