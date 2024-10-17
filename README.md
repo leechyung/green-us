@@ -103,5 +103,4 @@ spring.datasource.password=????
 ## ERD 📝
 ![ERD](https://github.com/user-attachments/assets/78dd3c0a-79e7-4625-b478-2067fb9ca431)
 
-
-
+역할 : 안드로이드 및 백엔드 개발자로 참여했습니다.
